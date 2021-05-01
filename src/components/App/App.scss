@@ -1,0 +1,26 @@
+nav {
+  width: 90vw;
+  height: 13vh;
+  margin: 2vh auto;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  
+  img {
+    height: 30px;
+    width: 90px;
+  }
+  input{
+     
+     height: 4vh;
+     width:30vh;
+     border-radius: 4px;
+     text-align: center;
+     border: 1px solid #ccc0bc
+  }
+}
+section {
+    min-height: 90vh;
+    width: 90vw;
+    margin: 0vh auto;
+}
