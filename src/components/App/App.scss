@@ -23,4 +23,9 @@ section {
     min-height: 90vh;
     width: 90vw;
     margin: 0vh auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    grid-column-gap: 3rem;
+    grid-row-gap: 5rem;
+    padding-bottom:2rem;
 }

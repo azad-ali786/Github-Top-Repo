@@ -1,0 +1,42 @@
+.cards {
+    height: 30vh;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+     background: #EBE8E7;
+     padding: 5vh;
+     border-radius: 3vw;
+      box-shadow:  20px 20px 60px #c8c5c4,
+               -20px -20px 60px #ffffff;
+               a{
+                   text-decoration:none;
+                   cursor: pointer;
+                   color: white;
+               }
+    h1{
+        text-transform: uppercase;
+        font-size:1.5rem;
+        font-weight: 700;
+    }
+    h2{
+     font-weight: 400;
+     font-size: 1rem;
+    }
+    .language {
+      color: white;
+      font-size: 0.7rem;
+      background: #E16293;
+      padding: 0.2rem;
+      border-radius: 4px;
+      height: max-content;
+      width: max-content;
+    }
+    .date-details {
+        display: flex;
+        h3{
+            margin-left: 3px;;
+        }
+    }
+  }
+  

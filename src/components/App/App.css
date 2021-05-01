@@ -30,5 +30,12 @@ section {
   min-height: 90vh;
   width: 90vw;
   margin: 0vh auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(600px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-column-gap: 3rem;
+  grid-row-gap: 5rem;
+  padding-bottom: 2rem;
 }
 /*# sourceMappingURL=App.css.map */

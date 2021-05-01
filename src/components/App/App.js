@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
-import '../App/App.css';
+import "../App/App.css";
+import Details from '../Details/Details'
 function App() {
+  //Months
   const getCurrentMonth = () => {
     const month = new Date().getMonth();
     if (month < 10) {
@@ -11,6 +13,8 @@ function App() {
       return month;
     }
   };
+
+  //Current data
   const getCurrentDay = () => {
     const day = new Date().getDate();
     if (day < 10) {
@@ -19,17 +23,22 @@ function App() {
       return day;
     }
   };
+
   // Date vars
   const currentYear = new Date().getFullYear();
   const currentMonth = getCurrentMonth();
   const currentDay = getCurrentDay();
   const lastWeek = `${currentYear}-${currentMonth}-${currentDay}`;
+
   //For setting data from api
   const [data, setData] = useState({});
+
   //Filter data
   const [filteredData, setFilteredData] = useState(data);
+
   //Checking if the data is fetched from api or not
   const [isFetched, setIsFetched] = useState(false);
+
   //Fetching Api
   useEffect(() => {
     axios
@@ -44,6 +53,7 @@ function App() {
       })
       .catch((e) => console.log(e));
   }, []);
+
   //submitHandler
   const handleSearch = (event) => {
     if (event.target.value !== "") {
@@ -58,8 +68,11 @@ function App() {
       setFilteredData(data);
     }
   };
-  console.log(filteredData);
 
+  console.log(filteredData);
+  if(isFetched){
+    
+  }
   return (
     <>
       <nav>
@@ -72,16 +85,14 @@ function App() {
           placeholder="Search Language"
           type="text"
           onChange={(event) => handleSearch(event)}
-        />
-        {" "}
+        />{" "}
       </nav>
-     
+
       <motion.section>
         {isFetched && (
-          <motion.div className="App">
-            {" "}
-            <h1>{filteredData[0].language}</h1>
-          </motion.div>
+          filteredData.map((data) => (  
+            <Details id={data.id} key={data.id} name={data.name} language={data.language} description={data.description} date={new Date(data.created_at).toUTCString()} link={data.clone_url}/>
+          ))
         )}
       </motion.section>
     </>
