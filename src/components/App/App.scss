@@ -28,4 +28,10 @@ section {
     grid-column-gap: 3rem;
     grid-row-gap: 5rem;
     padding-bottom:2rem;
+    @media (max-width : 644px) {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      }
+      @media (max-width : 450px) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
 }

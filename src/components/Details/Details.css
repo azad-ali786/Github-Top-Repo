@@ -10,11 +10,11 @@
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background: #EBE8E7;
+  background: #ebe8e7;
   padding: 5vh;
   border-radius: 3vw;
-  -webkit-box-shadow: 20px 20px 60px #c8c5c4, -20px -20px 60px #ffffff;
-          box-shadow: 20px 20px 60px #c8c5c4, -20px -20px 60px #ffffff;
+  -webkit-box-shadow: 20px 20px 60px #c8c5c4, -20px -20px 60px #ffffff;
+          box-shadow: 20px 20px 60px #c8c5c4, -20px -20px 60px #ffffff;
 }
 
 .cards a {
@@ -37,7 +37,7 @@
 .cards .language {
   color: white;
   font-size: 0.7rem;
-  background: #E16293;
+  background: #e16293;
   padding: 0.2rem;
   border-radius: 4px;
   height: -webkit-max-content;
@@ -56,5 +56,11 @@
 
 .cards .date-details h3 {
   margin-left: 3px;
+}
+
+@media (max-width: 644px) {
+  .cards {
+    height: 50vh;
+  }
 }
 /*# sourceMappingURL=Details.css.map */
