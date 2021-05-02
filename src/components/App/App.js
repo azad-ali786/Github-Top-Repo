@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 import "../App/App.css";
-import Details from '../Details/Details'
+import Details from "../Details/Details";
 function App() {
   //Months
   const getCurrentMonth = () => {
@@ -68,13 +68,15 @@ function App() {
       setFilteredData(data);
     }
   };
-
-  console.log(filteredData);
-  if(isFetched){
-    
+  if (isFetched) {
   }
   return (
     <>
+    <div className={"slider" + (isFetched ? "fade" : "")}>
+      <div className="loader">
+        <div className="load"></div>
+      </div>
+      </div>
       <nav>
         {" "}
         <h1>Github Trending Repository</h1>
@@ -89,11 +91,18 @@ function App() {
       </nav>
 
       <motion.section>
-        {isFetched && (
-          filteredData.map((data) => (  
-            <Details id={data.id} key={data.id} name={data.name} language={data.language} description={data.description} date={new Date(data.created_at).toUTCString()} link={data.clone_url}/>
-          ))
-        )}
+        {isFetched &&
+          filteredData.map((data) => (
+            <Details
+              id={data.id}
+              key={data.id}
+              name={data.name}
+              language={data.language}
+              description={data.description}
+              date={new Date(data.created_at).toUTCString()}
+              link={data.clone_url}
+            />
+          ))}
       </motion.section>
     </>
   );

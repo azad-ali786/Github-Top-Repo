@@ -1,37 +1,79 @@
+.slider {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ccc0bc;
+  .loader {
+    height: 1vh;
+    width: 20vh;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #EBE8E7;
+    .load {
+      height: 1vh;
+      width: 4vh;
+      border-radius: 12px;
+      background: white;
+      animation: load 1s alternate infinite linear;
+    }
+  }
+}
+@keyframes load {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(430%);
+  }
+}
+.fade {
+  animation: fade 1s forwards linear;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 nav {
   width: 90vw;
   height: 13vh;
   margin: 2vh auto;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: space-around;
-  
+
   img {
     height: 30px;
     width: 90px;
   }
-  input{
-     
-     height: 4vh;
-     width:30vh;
-     border-radius: 4px;
-     text-align: center;
-     border: 1px solid #ccc0bc
+  input {
+    height: 4vh;
+    width: 30vh;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #ccc0bc;
   }
 }
 section {
-    min-height: 90vh;
-    width: 90vw;
-    margin: 0vh auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-    grid-column-gap: 3rem;
-    grid-row-gap: 5rem;
-    padding-bottom:2rem;
-    @media (max-width : 644px) {
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      }
-      @media (max-width : 450px) {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      }
+  min-height: 90vh;
+  width: 90vw;
+  margin: 0vh auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-column-gap: 3rem;
+  grid-row-gap: 5rem;
+  padding-bottom: 2rem;
+  @media (max-width: 644px) {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+  @media (max-width: 450px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
