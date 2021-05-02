@@ -39,5 +39,11 @@
   }
   @media (max-width: 644px) {
     height: 50vh;
+    .date-details {
+      img {
+        height: 20px;
+        width: 20px;
+      }
+    }
   }
 }
