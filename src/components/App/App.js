@@ -51,7 +51,7 @@ function App() {
         // console.log(data.data.items);
         setIsFetched(true);
       })
-      .catch((e) => console.log(e));
+      .catch((e) => alert("Reload the page or restart the project  "+e));
   }, []);
 
   //submitHandler
