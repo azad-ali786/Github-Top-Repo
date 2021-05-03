@@ -45,9 +45,9 @@ function App() {
       .get(
         `https://api.github.com/search/repositories?q=created:%22%3E${lastWeek}%22&sort=stars&order=desc`
       )
-      .then((data) => {
-        setData(data.data.items);
-        setFilteredData(data.data.items);
+      .then((res) => {
+        setData(res.data.items);
+        setFilteredData(res.data.items);
         // console.log(data.data.items);
         setIsFetched(true);
       })
